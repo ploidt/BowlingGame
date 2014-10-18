@@ -1,3 +1,4 @@
+
 require "game"
 
 describe Game do
@@ -12,7 +13,7 @@ describe Game do
       expect(temp).to eq(300)
     end
 
-    it 'retunrs 172 for test' do
+    it 'returns 177 for test' do
       @game.roll(10)
       @game.roll(8)
       @game.roll(1)
@@ -29,7 +30,7 @@ describe Game do
       @game.roll(10)
       2.times{ @game.roll(0)}
       temp = @game.score
-      expect(temp) == 172
+      expect(temp).to eq(177)
     end
 
   end

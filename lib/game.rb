@@ -15,13 +15,19 @@ class Game
 
     FRAME.times do
       if strike?(index)
+        #puts "index: #{index}"
         score += strike_score(index)
+        puts "current score: #{score}"
         index += 1
       elsif spare?(index)
+        #puts "index: #{index}"
         score += spare_score(index)
+        puts "current score: #{score}"
         index += 2
       else
+        #puts "index: #{index}"
         score += (@throws[index] + @throws[index+1])
+        puts "current score: #{score}"
         index += 2
       end
     end
