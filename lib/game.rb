@@ -2,11 +2,11 @@ class Game
   FRAME = 10
 
   def initialize
-    @throws = []
+    @frames = []
   end
 
   def roll(pins)
-    @throws.push pins
+    @frames.push pins
   end
 
   def score
@@ -26,7 +26,7 @@ class Game
         index += 2
       else
         #puts "index: #{index}"
-        score += (@throws[index] + @throws[index+1])
+        score += (@frames[index] + @frames[index+1])
         puts "current score: #{score}"
         index += 2
       end
@@ -36,18 +36,18 @@ class Game
 
   private
   def strike?(index)
-    @throws[index] == 10
+    @frames[index] == 10
   end
 
   def spare?(index)
-    @throws[index] + @throws[index+1] == 10
+    @frames[index] + @frames[index+1] == 10
   end
 
   def strike_score(index)
-    10 + @throws[index+1] + @throws[index+2]
+    10 + @frames[index+1] + @frames[index+2]
   end
 
   def spare_score(index)
-    10 + @throws[index+2]
+    10 + @frames[index+2]
   end
 end
